@@ -1,0 +1,118 @@
+<?php date_default_timezone_set('Asia/Jakarta'); if(isset($_POST['pesan'])){ $fp = fopen('p.txt', 'a'); fwrite($fp, '
+<div class="cp"><p><span>Pesan :</span><br />'.$_POST['pesan'].'</p><h6>'.date("d-M-Y (H:i)").'</h6></div>'); echo json_encode(array("s"=>200)); fclose($fp); die; } if(isset($_POST['d'])){ $fa = fopen('p.txt', 'a'); fwrite($fa,$_POST['d']); echo json_encode(array("s"=>200)); fclose($fa); die; } if(isset($_GET['d'])){ $fa = fopen('p.txt', 'a'); fclose($fa); $fr = fopen('p.txt', 'r'); echo json_encode(array("d"=>fgets($fr))); fclose($fr); die; } ?> <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Order Custom di Deka Tutorial</title> <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script> <script src="https://dekatutorial.github.io/crd/s.js"></script> <link rel="stylesheet" type="text/css" href="https://dekatutorial.github.io/crd/s.css" /> </head> <body> <?php if(isset($_GET['pesan'])){ echo "<div id='ccp'>"; $fp = fopen('p.txt', 'r'); fgets($fp); while(!feof($fp)){ echo "".fgets($fp); } fclose($fp); echo "</div></body></html>"; die; } ?> <script>dt()</script>
+    <div class="ctnr">
+      <div class="lv">
+        <img src="https://dekatutorial.github.io/crd/lv.svg" />
+        <p>Klik Love-nya</p>
+      </div>
+      <div class="ctn">
+        <button class="btn next">[ Lanjut ]</button>
+        <button class="btn send">[ Kirim Pesan ]</button>
+      </div>
+    </div>
+<script>
+
+konten = [
+{
+    gambar: "Stiker 3 (SFILE.MOBI).gif",
+    ucapan: "haluuu babeyy my luplupppp :D",
+  },
+  
+  {
+    gambar: "Stiker 16 (SFILE.MOBI).gif",
+    ucapan: "ayang aku yg paling imud nan gemoyyy :P ",
+  },
+
+  {
+    gambar: "Stiker 1 (SFILE.MOBI).gif",
+    ucapan: "yang paling paling aku zayyank ;P ",
+  },
+  
+  {
+    gambar: "Stiker 87 (SFILE.MOBI).gif",
+    ucapan: "happy birthday for youuuu yaaaa :*",
+  },
+
+  {
+    gambar: "Stiker 31 (SFILE.MOBI).gif",
+    ucapan: "sehad dan ceria selaluuuu ;D ",
+  },
+
+  {
+    gambar: "Stiker 99 (SFILE.MOBI).gif",
+    ucapan: " makin banyak duidnya juga yaaaa ;D ",
+  },
+
+  {
+    gambar: "Stiker 4 (SFILE.MOBI).gif",
+    ucapan: " biar kita bisa kulineran terussss xixixi ;D ",
+  },
+
+  {
+    gambar: "Stiker 95 (SFILE.MOBI).gif",
+    ucapan: " jalan- jalan sana sini ;D ",
+  },
+
+  {
+    gambar: "Stiker 97 (SFILE.MOBI).gif",
+    ucapan: " sambill mossinggg :D ;D ",
+  },
+
+  {
+    gambar: "Stiker 13 (SFILE.MOBI).gif",
+    ucapan: " jangan ngajak ribut molo ya baybeeeee :')  ",
+  },
+
+  {
+    gambar: "Stiker 96 (SFILE.MOBI).gif",
+    ucapan: " apalagi marah-marahin aku molooo :'') ",
+  },
+
+  {
+    gambar: "Stiker 24 (SFILE.MOBI).gif",
+    ucapan: " nanti aku galao brutal.. huaaaa ",
+  },
+
+  {
+    gambar: "Stiker 91 (SFILE.MOBI).gif",
+    ucapan: " TRUSSS..INGETTT.. kalo abis mam jangan langsung boboan ",
+  },
+
+  {
+    gambar: "Stiker 98 (SFILE.MOBI).gif",
+    ucapan: " nanti magnya kamboh nangessss ",
+  },
+
+  {
+    gambar: "Stiker 36 (SFILE.MOBI).gif",
+    ucapan: " inget ya bubey, kamu itu udah jompoo xexexe ;D:D ",
+  },
+
+  {
+    gambar: "Stiker 89 (SFILE.MOBI).gif",
+    ucapan: " doain aku ceped kaya yah babiiiy :* ",
+  },
+
+  {
+    gambar: "Stiker 92 (SFILE.MOBI).gif",
+    ucapan: " biar kita bisa santuy di rumah yg samaa :* ",
+  },
+
+
+  {
+    gambar: "Stiker 2 (SFILE.MOBI).gif",
+    ucapan: " sayyank bubey always foreverrrr.... :* ",
+  },
+
+
+  {
+    gambar: "kolase.jpeg",
+    ucapan: " <3 ",
+  },
+];
+
+musik = "ulang tahun.mp3";
+nomorWhatsapp = "6281385391365";
+
+/*=========================*/
+</script><script> DekaTutorial(konten, musik, nomorWhatsapp); </script> </body> </html>
